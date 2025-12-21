@@ -329,7 +329,7 @@ Este proyecto está bajo la Licencia MIT.
 ## 📞 Contacto
 
 - GitHub: [@jjho05](https://github.com/jjho05)
-- Email: lic.ing.jesusolvera@gmail.com
+- Email: jjho.reivaj05@gmail.com / hernandez.jesusjavier.20.0770@gmail.com
 
 ---
 
