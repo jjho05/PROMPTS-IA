@@ -1,6 +1,6 @@
-# 🎨 PROMPTS IA - Generador Inteligente de Prompts
+# 🎨🎬 PROMPTS IA - Generador Inteligente de Prompts
 
-> Generador profesional de prompts para herramientas de IA de generación de imágenes, potenciado por Gemini 2.5 Flash
+> Generador profesional de prompts para herramientas de IA de generación de **imágenes y videos**, potenciado por Gemini 2.5 Flash
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 [![CustomTkinter](https://img.shields.io/badge/CustomTkinter-5.2+-green.svg)](https://github.com/TomSchimansky/CustomTkinter)
@@ -8,11 +8,26 @@
 
 ## 📋 Descripción
 
-**PROMPTS IA** es una aplicación de escritorio que utiliza Google Gemini 2.5 Flash para convertir descripciones simples en prompts técnicos y detallados optimizados para herramientas de generación de imágenes con IA como Midjourney, DALL-E, Stable Diffusion, y más.
+**PROMPTS IA** es una aplicación de escritorio que utiliza Google Gemini 2.5 Flash para convertir descripciones simples en prompts técnicos y detallados optimizados para herramientas de generación de **imágenes** (Midjourney, DALL-E, Stable Diffusion) y **videos** (Runway, Pika, Sora) con IA.
 
-## ✨ Características
+## ✨ Características Principales
 
-### 4 Categorías de Generación
+### 🎯 Doble Modo: Imágenes y Videos
+- **Modo Imagen**: 4 categorías especializadas para generación de imágenes
+- **Modo Video**: 4 categorías especializadas para generación de videos
+- Selector intuitivo para cambiar entre modos
+
+### 📜 Historial de Prompts
+- Guarda automáticamente todos los prompts generados
+- Visualiza tu historial completo con metadata
+- Recarga prompts anteriores fácilmente
+
+### 💾 Exportación
+- Exporta prompts a archivos de texto formateados
+- Incluye toda la metadata (fecha, categoría, estilo, etc.)
+- Perfecto para documentar tu trabajo
+
+## 🖼️ Categorías para IMÁGENES
 
 #### 🎭 Transformación de Rostro
 - Disfraces y vestuarios
@@ -39,13 +54,39 @@
 - Color grading
 - Partículas y humo
 
-### Características Generales
-- 🤖 **IA Avanzada** - Gemini 2.5 Flash
-- 🎯 **Prompts Técnicos** - Lenguaje profesional y directo
-- 📋 **Copiar al Portapapeles** - Un click para copiar
-- 🎨 **6 Estilos Artísticos** - Realista, Digital Art, Anime, 3D, Clásico, Auto-detectar
-- 🌙 **Interfaz Moderna** - Tema oscuro profesional
-- ⚡ **Generación Rápida** - Resultados en segundos
+## 🎬 Categorías para VIDEOS
+
+#### 🎬 Generación desde Cero
+- Crear videos desde descripciones de texto
+- Especificar movimientos de cámara
+- Control de duración flexible
+- Múltiples relaciones de aspecto
+
+#### 🖼️➡️🎬 Imagen a Video
+- Animar imágenes estáticas
+- Movimientos sutiles y naturales
+- Preservar calidad de imagen original
+- Transiciones suaves
+
+#### ✨ Efectos y Transiciones
+- Efectos visuales cinematográficos
+- Transiciones fluidas
+- Color grading dinámico
+- Cambios de iluminación
+
+#### 🎥 Movimientos de Cámara
+- Paneo (izquierda/derecha)
+- Zoom (acercar/alejar)
+- Dolly (avance/retroceso)
+- Tracking (seguimiento)
+- Control de intensidad
+
+### Parámetros de Video
+- ⏱️ **Duración**: Flexible (3s, 5s, 10s, 30s, 1min, personalizado)
+- 📐 **Relación de Aspecto**: 16:9, 9:16, 1:1, 4:3
+- 🎥 **Movimiento de Cámara**: Estático, Paneo, Zoom, Dolly, Tracking
+- 💫 **Intensidad**: Baja, Media, Alta
+- 🎨 **Estilos**: Realista, Cinematográfico, Anime, 3D, Artístico
 
 ## 🚀 Instalación
 
@@ -69,7 +110,7 @@ pip install -r requirements.txt
 echo "TU_API_KEY_AQUI" > api_key.txt
 
 # Ejecutar aplicación
-python app.py
+python main.py
 ```
 
 ## 📦 Dependencias
@@ -83,16 +124,19 @@ google-generativeai==0.3.0
 
 ### Inicio Rápido
 
-1. **Ejecuta** `python app.py`
-2. **Selecciona** una categoría
-3. **Describe** tu idea
-4. **Elige** un estilo artístico
-5. **Genera** y copia los prompts
+1. **Ejecuta** `python main.py`
+2. **Selecciona** tipo de medio (Imagen o Video)
+3. **Elige** una categoría
+4. **Describe** tu idea
+5. **Configura** parámetros (duración, movimiento, etc.)
+6. **Selecciona** un estilo artístico
+7. **Genera** y copia los prompts
 
-### Ejemplo de Uso
+### Ejemplo de Uso - Imagen
 
 **Entrada:**
 ```
+Tipo de Medio: 🖼️ Imagen
 Categoría: 🎭 Transformación de Rostro
 Descripción: Persona con disfraz de superhéroe
 Tipo: Disfraz/Vestuario
@@ -115,66 +159,34 @@ asimétricos, proporciones faciales incorrectas, rostro
 borroso, rasgos deformados, baja calidad, desenfoque
 ```
 
-## 🎯 Categorías Detalladas
+### Ejemplo de Uso - Video
 
-### 🎭 Transformación de Rostro
+**Entrada:**
+```
+Tipo de Medio: 🎬 Video
+Categoría: 🎬 Generación desde Cero
+Descripción: Gato caminando por una playa al atardecer
+Duración: 5s
+Relación de Aspecto: 16:9
+Movimiento de Cámara: Paneo (Izq/Der)
+Intensidad: Media
+Estilo: 🎬 Cinematográfico
+```
 
-**Tipos disponibles:**
-- Disfraz/Vestuario
-- Cambio de Edad
-- Cambio de Estilo
-- Maquillaje/Efectos
-- Otro
+**Salida:**
+```
+POSITIVE:
+Video de un gato atigrado caminando por una playa al atardecer, 
+cámara con paneo lateral suave siguiendo al animal, olas en 
+movimiento constante en segundo plano, arena con textura detallada, 
+iluminación dorada del atardecer, movimiento fluido y natural, 
+duración 5 segundos, aspecto 16:9, estilo cinematográfico realista
 
-**Opciones:**
-- Mantener identidad facial: Sí/No
-
-**Ideal para:**
-- Face swap
-- Edición facial
-- Caracterización
-- Envejecimiento/rejuvenecimiento
-
-### 🖼️ Generación desde Cero
-
-**Características:**
-- Descripción libre
-- Auto-detección de estilo
-- Prompts técnicos optimizados
-
-**Ideal para:**
-- Crear imágenes nuevas
-- Conceptos originales
-- Ilustraciones
-
-### 🎨 Modificación de Imagen
-
-**Tipos disponibles:**
-- Cambio de Fondo
-- Agregar Elementos
-- Eliminar Elementos
-- Reemplazar Objetos
-- Otro
-
-**Ideal para:**
-- Edición de fotos
-- Composiciones
-- Retoque digital
-
-### ✨ Efectos Especiales
-
-**Tipos disponibles:**
-- Iluminación
-- Clima/Atmósfera
-- Hora del Día
-- Color Grading
-- Partículas/Humo
-- Otro
-
-**Ideal para:**
-- Efectos cinematográficos
-- Atmósferas
-- Post-procesamiento
+NEGATIVE:
+movimiento brusco, saltos de frames, parpadeo, glitches, 
+movimiento antinatural, cámara inestable, cortes abruptos, 
+baja calidad, artefactos de compresión, distorsión temporal
+```
 
 ## 🎨 Estilos Artísticos
 
@@ -183,6 +195,7 @@ borroso, rasgos deformados, baja calidad, desenfoque
 - **🌸 Anime/Manga** - Estilo japonés
 - **🎮 3D/Render** - Modelado 3D, CGI
 - **🖼️ Pintura Clásica** - Óleo, acuarela, técnicas tradicionales
+- **🎬 Cinematográfico** - Estilo de cine profesional (para videos)
 - **✨ Auto-detectar** - La IA elige el mejor estilo
 
 ## 🤖 Tecnología
@@ -204,36 +217,68 @@ model = genai.GenerativeModel('gemini-2.5-flash')
 
 ```
 PROMPTS-IA/
-├── app.py                    # Aplicación principal
-├── api_key.txt              # API Key (no incluida)
-└── requirements.txt         # Dependencias
+├── src/
+│   ├── __init__.py          # Inicialización del paquete
+│   ├── generator.py         # Generador de prompts con IA
+│   ├── gui.py              # Interfaz gráfica
+│   └── utils.py            # Utilidades (historial, exportación)
+├── main.py                 # Punto de entrada
+├── api_key.txt            # API Key (no incluida)
+├── requirements.txt       # Dependencias
+└── README.md             # Este archivo
 ```
 
-## 🎨 Interfaz de Usuario
+## 📜 Historial
 
-### Paleta de Colores
+El historial se guarda automáticamente en `history.json` con la siguiente estructura:
 
-```python
-COLORS = {
-    "bg_primary": "#1a1d23",
-    "bg_secondary": "#242831",
-    "bg_tertiary": "#2d3139",
-    "accent_primary": "#5b8c5a",
-    "accent_danger": "#c75450",
-    "text_primary": "#e8e8e8",
-    "text_secondary": "#a0a0a0",
-    "border": "#3a3f4b"
+```json
+{
+  "timestamp": "2026-01-09T19:30:00",
+  "tipo_medio": "video",
+  "categoria": "🎬 Generación desde Cero",
+  "descripcion": "Gato caminando por playa",
+  "estilo": "🎬 Cinematográfico",
+  "prompt_positivo": "...",
+  "prompt_negativo": "...",
+  "detalles": {
+    "duracion": "5s",
+    "aspecto": "16:9",
+    "movimiento_camara": "Paneo (Izq/Der)",
+    "intensidad_movimiento": "Media"
+  }
 }
 ```
 
-### Componentes
+## 💾 Exportación
 
-- **Scrollable Frame** - Interfaz fluida
-- **Category Selector** - 4 categorías
-- **Dynamic Fields** - Campos contextuales
-- **Style Selector** - 6 estilos
-- **Copy Buttons** - Copiar con un click
-- **Modern Theme** - Diseño oscuro profesional
+Los prompts exportados se guardan en `exports/` con formato:
+
+```
+╔══════════════════════════════════════════════════════════════╗
+║              PROMPTS IA - Prompt Exportado                   ║
+╚══════════════════════════════════════════════════════════════╝
+
+📅 Fecha: 09/01/2026 19:30:00
+🎬 Tipo de Medio: Video
+📂 Categoría: 🎬 Generación desde Cero
+🎨 Estilo: Cinematográfico
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 DESCRIPCIÓN:
+Gato caminando por una playa al atardecer
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ PROMPT POSITIVO:
+[prompt generado]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚫 PROMPT NEGATIVO:
+[prompt generado]
+```
 
 ## 🔐 Configuración de API
 
@@ -246,35 +291,6 @@ COLORS = {
 
 ```bash
 echo "tu-api-key-aqui" > api_key.txt
-```
-
-## 📚 Ejemplos de Prompts Generados
-
-### Ejemplo 1: Generación desde Cero
-
-**Entrada:** "Un gato en la playa al atardecer"
-
-**Prompt Positivo:**
-```
-Fotografía de un gato atigrado descansando en una playa 
-durante el atardecer, olas del océano en segundo plano 
-reflejando tonos naranjas del cielo, arena detallada, 
-iluminación natural lateral que define el pelaje del 
-animal, composición horizontal con profundidad de campo, 
-alta resolución, estilo fotorrealista
-```
-
-### Ejemplo 2: Efectos Especiales
-
-**Entrada:** "Iluminación de atardecer dorado"
-
-**Prompt Positivo:**
-```
-Escena con iluminación de atardecer dorado, rayos de luz 
-volumétricos atravesando nubes, partículas de polvo visibles 
-en el aire, color grading cálido con tonos naranjas y 
-amarillos, sombras alargadas, atmósfera cinematográfica, 
-alta calidad, estilo fotorrealista
 ```
 
 ## 🐛 Solución de Problemas
@@ -293,14 +309,24 @@ cat api_key.txt
 pip install -r requirements.txt --force-reinstall
 ```
 
+### Error: No se puede importar src
+
+```bash
+# Asegúrate de ejecutar desde el directorio raíz
+cd PROMPTS-IA
+python main.py
+```
+
 ## 📈 Roadmap
 
-- [ ] Historial de prompts generados
-- [ ] Exportar prompts a archivo
-- [ ] Más categorías (Video, Audio)
+- [x] Generación de prompts para imágenes
+- [x] Generación de prompts para videos
+- [x] Historial de prompts generados
+- [x] Exportar prompts a archivo
 - [ ] Plantillas predefinidas
 - [ ] Modo batch (múltiples prompts)
 - [ ] Integración directa con APIs de generación
+- [ ] Soporte para audio
 
 ## 🤝 Contribuir
 
@@ -337,4 +363,4 @@ Este proyecto está bajo la Licencia MIT.
 
 **Hecho con ❤️ para creadores de contenido con IA**
 
-**PROMPTS IA** - De idea a prompt perfecto 🎨✨
+**PROMPTS IA** - De idea a prompt perfecto 🎨🎬✨
