@@ -209,6 +209,11 @@ class BrainCourseGUI:
         )
         self.input_text.pack(fill="x", pady=(0, 10))
         
+        # Habilitar pegado con Cmd+V (Mac) y Ctrl+V (Windows/Linux)
+        self.input_text.bind("<Command-v>", lambda e: self._pegar_texto())
+        self.input_text.bind("<Control-v>", lambda e: self._pegar_texto())
+
+        
         # Style selector
         style_frame = ctk.CTkFrame(scrollable_frame, fg_color="transparent")
         style_frame.pack(fill="x", pady=(0, 10))
@@ -642,6 +647,18 @@ class BrainCourseGUI:
             self.mostrar_notificacion("✅ Copiado", "Texto copiado al portapapeles")
         else:
             self.mostrar_notificacion("⚠️ Advertencia", "No hay texto para copiar")
+    
+    def _pegar_texto(self):
+        """Pega texto del portapapeles en el campo de entrada"""
+        try:
+            texto = self.root.clipboard_get()
+            if texto:
+                # Insertar en la posición del cursor
+                self.input_text.insert("insert", texto)
+                return "break"  # Prevenir el comportamiento por defecto
+        except:
+            pass
+        return "break"
     
     def mostrar_notificacion(self, titulo, mensaje):
         """Muestra una ventana de notificación modal temporal"""
