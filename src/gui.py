@@ -726,7 +726,8 @@ class BrainCourseGUI:
                 # Actualizar la UI
                 self.root.after(0, lambda: self.mostrar_resultados(prompts))
             except Exception as e:
-                self.root.after(0, lambda: self.mostrar_notificacion("❌ Error", f"Error al generar: {str(e)}"))
+                error_msg = str(e)
+                self.root.after(0, lambda: self.mostrar_notificacion("❌ Error", f"Error al generar: {error_msg}"))
             finally:
                 self.root.after(0, lambda: self.generate_btn.configure(state="normal", text="✨ Generar Prompts"))
         
